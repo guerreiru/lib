@@ -1,0 +1,30 @@
+const weightsMock = [
+  {
+    id: 1,
+    createdAt: new Date("2023-04-19T17:32:00.000Z"),
+    creationUser: "fernando.luiz",
+    pastureId: 1,
+    livestockId: 111,
+    animalCategoryId: 1,
+    operationDate: new Date("2023-04-19T17:32:00.000Z"),
+    weightType: "VISUAL",
+    weight: 560,
+    farmId: 1,
+    synchronizationId: "",
+  },
+  {
+    id: 2,
+    createdAt: new Date("2023-05-19T17:32:00.000Z"),
+    creationUser: "fernando.luiz",
+    pastureId: 1,
+    livestockId: 111,
+    animalCategoryId: 1,
+    operationDate: new Date("2023-05-19T17:32:00.000Z"),
+    weightType: "PESADO",
+    weight: 600,
+    farmId: 1,
+    synchronizationId: "",
+  },
+];
+
+module.exports = weightsMock;
