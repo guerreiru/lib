@@ -16,8 +16,6 @@
     "ts-node-dev": "^2.0.0"
   },
   "dependencies": {
-    "@turf/simplify": "^6.5.0",
-    "@turf/turf": "^6.5.0",
     "dayjs": "^1.11.9",
     "nodemon": "^2.0.21"
   }
