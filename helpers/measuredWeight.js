@@ -1,5 +1,3 @@
-const weightGainCurve = require("../mocks/weightsGainCurve");
-
 function countDaysPerMonth(startDate, endDate) {
   const start = new Date(startDate);
   const end = new Date(endDate);
@@ -12,7 +10,9 @@ function countDaysPerMonth(startDate, endDate) {
     const currentDate = new Date(start);
     currentDate.setDate(start.getDate() + i);
 
-    const currentMonth = currentDate.getMonth();
+    const currentMonth = currentDate
+      .toLocaleString("en-US", { month: "long" })
+      .toLowerCase();
 
     result[currentMonth] = (result[currentMonth] || 0) + 1;
   }
@@ -38,17 +38,12 @@ function calculateProjectedWeight(
   return projectedWeight;
 }
 
-// Examplo de uso
+// Example usage
 // const lastWeighingDate = "2024-02-15T23:59:59.999Z";
 // const lastWeight = 342;
 // const currentDate = "2024-03-01T23:59:59.999Z";
 
-// const projectedWeight = calculateProjectedWeight(
-//   lastWeighingDate,
-//   lastWeight,
-//   weightGainCurve,
-//   currentDate
-// );
+// const projectedWeight = calculateProjectedWeight(lastWeighingDate, lastWeight, weightGainCurve, currentDate);
 // console.log(projectedWeight);
 
 module.exports = { calculateProjectedWeight };
