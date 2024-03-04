@@ -1,39 +1,54 @@
-// Função para calcular o peso projetado
-const calculateProjectedWeight = (
-  lastWeighing,
-  currentWeight,
+const weightGainCurve = require("../mocks/weightsGainCurve");
+
+function countDaysPerMonth(startDate, endDate) {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+
+  const totalDays = Math.floor((end - start) / (1000 * 60 * 60 * 24));
+
+  const result = {};
+
+  for (let i = 1; i <= totalDays; i++) {
+    const currentDate = new Date(start);
+    currentDate.setDate(start.getDate() + i);
+
+    const currentMonth = currentDate.getMonth();
+
+    result[currentMonth] = (result[currentMonth] || 0) + 1;
+  }
+
+  return result;
+}
+
+function calculateProjectedWeight(
+  lastWeighingDate,
+  lastWeight,
   weightGainCurve,
   currentDate
-) => {
-  const millisecondsInADay = 1000 * 60 * 60 * 24;
-  const elapsedDays = Math.floor(
-    (currentDate - lastWeighing) / millisecondsInADay
-  );
+) {
+  const daysPerMonth = countDaysPerMonth(lastWeighingDate, currentDate);
 
-  const monthOfLastWeighIn = lastWeighing.getMonth() + 1; // Mês da última pesagem (1 a 12)
-  const dailyWeightGain = weightGainCurve[monthOfLastWeighIn];
+  let projectedWeight = lastWeight;
 
-  const periodWeightGain = dailyWeightGain * elapsedDays;
-  const projectedWeight = currentWeight + periodWeightGain;
+  for (const month in daysPerMonth) {
+    const dailyGain = weightGainCurve[month] || 0;
+    projectedWeight += dailyGain * daysPerMonth[month];
+  }
 
   return projectedWeight;
-};
+}
 
-// Exemplo de uso
-// const lastWeighing = new Date(2023, 4, 1); // 01/05/2023
-// const currentWeight = 350; // 350kg/cab
-
-// const weightGainCurve = {
-//   5: 0.5, // Maio: Ganho de 0,5kg/dia
-// };
-
-// const currentDate = new Date(2023, 4, 15); // 15/05/2023
+// Examplo de uso
+// const lastWeighingDate = "2024-02-15T23:59:59.999Z";
+// const lastWeight = 342;
+// const currentDate = "2024-03-01T23:59:59.999Z";
 
 // const projectedWeight = calculateProjectedWeight(
-//   lastWeighing,
-//   currentWeight,
+//   lastWeighingDate,
+//   lastWeight,
 //   weightGainCurve,
 //   currentDate
 // );
+// console.log(projectedWeight);
 
 module.exports = { calculateProjectedWeight };
