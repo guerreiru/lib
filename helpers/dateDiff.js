@@ -1,46 +1,39 @@
-const { isAValidDate } = require("./isAValidDate");
+const { isValidDate } = require("./isValidDate");
+const { parseISODate } = require("./parseISODate");
 
 /**
  * Calculates the difference between two dates and returns the selected fields.
  *
- * @param {Date} startDate - The start date.
- * @param {Date} endDate - The end date.
- * @param {...string} selectedOptions - The selected fields (optional). Available options: "hours", "minutes", "seconds", "milliseconds".
+ * @param {Date|string} startDate - The start date. Can be a Date object or a string in ISO 8601 format.
+ * @param {Date|string} endDate - The end date. Can be a Date object or a string in ISO 8601 format.
  * @returns {Object} - An object containing the selected fields and their values.
+ * @throws {Error} - If startDate or endDate are not valid date objects or strings in ISO 8601 format.
  */
-
-const dateDiff = (startDate, endDate, ...selectedOptions) => {
-  const options = ["hours", "minutes", "seconds", "milliseconds"];
-
-  if (!selectedOptions.length) {
-    selectedOptions = options;
+const dateDiff = (startDate, endDate) => {
+  // Convert strings to Date objects if necessary
+  if (typeof startDate === "string") {
+    startDate = parseISODate(startDate);
+  }
+  if (typeof endDate === "string") {
+    endDate = parseISODate(endDate);
   }
 
-  if (isAValidDate(startDate) && isAValidDate(endDate)) {
-    const millisecondsDiff = Math.abs(endDate - startDate);
-
-    // Calculation of seconds
-    const secondsDiff = Math.floor(millisecondsDiff / 1000);
-    let milliseconds = millisecondsDiff % 1000;
-
-    // Calculation of hours
-    const hours = Math.floor(secondsDiff / 3600);
-    let seconds = secondsDiff % 3600;
-
-    // Calculation of minutes
-    const minutes = Math.floor(seconds / 60);
-    seconds %= 60;
-
-    const result = {};
-
-    selectedOptions.forEach((key) => {
-      if (options.includes(key)) {
-        result[key] = eval(key);
-      }
-    });
-
-    return result;
+  // Validate startDate and endDate
+  if (!isValidDate(startDate) || !isValidDate(endDate)) {
+    throw new Error("Invalid start or end date");
   }
+
+  const millisecondsDiff = Math.abs(endDate - startDate);
+  const result = {};
+
+  // Calculate all units at once
+  const totalSeconds = millisecondsDiff / 1000;
+  result.hours = Math.floor(totalSeconds / 3600);
+  result.minutes = Math.floor((totalSeconds % 3600) / 60);
+  result.seconds = Math.floor(totalSeconds % 60);
+  result.milliseconds = millisecondsDiff % 1000;
+
+  return result;
 };
 
 module.exports = { dateDiff };
