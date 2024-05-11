@@ -28,6 +28,14 @@ function calculateProjectedWeight(
 ) {
   const daysPerMonth = countDaysPerMonth(lastWeighingDate, currentDate);
 
+  lastWeighingDate.setHours(0);
+  lastWeighingDate.setMinutes(0);
+  lastWeighingDate.setSeconds(0);
+
+  currentDate.setHours(0);
+  currentDate.setMinutes(0);
+  currentDate.setSeconds(0);
+
   let projectedWeight = lastWeight;
 
   for (const month in daysPerMonth) {
