@@ -1,6 +1,6 @@
-const { hasValue } = require("./hasValue");
+export const { hasValue } = require("./hasValue");
 
-const ageRangeSeeds = (ageRanges) => {
+export const ageRangeSeeds = (ageRanges) => {
   if (ageRanges.length && ageRanges.length > 0) {
     const values = ageRanges.map(
       ({
@@ -30,5 +30,3 @@ const ageRangeSeeds = (ageRanges) => {
     return query;
   }
 };
-
-module.exports = { ageRangeSeeds };

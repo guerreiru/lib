@@ -1,4 +1,4 @@
-const pastos = [
+export const pastos = [
   {
     IdPasto: 1372,
     IdRetiro: 193,
@@ -432,5 +432,3 @@ const pastos = [
     ],
   },
 ];
-
-module.exports = { pastos };

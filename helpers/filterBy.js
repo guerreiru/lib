@@ -5,8 +5,6 @@
  * @param {string} filter - A chave pela qual os objetos serão filtrados.
  * @returns {Array<Object>} Um novo array contendo apenas os objetos que possuem valor para a chave especificada.
  */
-const filterBy = (data, filter) => {
+export const filterBy = (data, filter) => {
   return data.filter((item) => item[filter]);
 };
-
-module.exports = { filterBy };

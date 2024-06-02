@@ -1,7 +1,7 @@
-const simplify = require("@turf/simplify");
-const coords = require("./IdPasto=56083.json");
+export const simplify = require("@turf/simplify");
+export const coords = require("./IdPasto=56083.json");
 
-const makeGeoJson = {
+export const makeGeoJson = {
   type: "FeatureCollection",
   features: [
     {
@@ -16,10 +16,10 @@ const makeGeoJson = {
   ],
 };
 
-const options = { tolerance: 0.0001, highQuality: true };
-const simplified = simplify(makeGeoJson, options);
-const simplifiedCoords = simplified.features[0].geometry.coordinates[0];
-const geoJsonToObj = simplifiedCoords.map((coord) => ({
+export const options = { tolerance: 0.0001, highQuality: true };
+export const simplified = simplify(makeGeoJson, options);
+export const simplifiedCoords = simplified.features[0].geometry.coordinates[0];
+export const geoJsonToObj = simplifiedCoords.map((coord) => ({
   lng: coord[0],
   lat: coord[1],
 }));

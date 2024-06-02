@@ -1,4 +1,4 @@
-const ciclosForragensTaxaCrescimentoMock = [
+export const ciclosForragensTaxaCrescimentoMock = [
   {
     IdCicloForragemFazenda: 2,
     IdFazenda: 16,
@@ -63,5 +63,3 @@ const ciclosForragensTaxaCrescimentoMock = [
     ],
   },
 ];
-
-module.exports = { ciclosForragensTaxaCrescimentoMock };

@@ -1,4 +1,4 @@
-const enrichedMovements = [
+export const enrichedMovements = [
   {
     id: 180346,
     createdAt: new Date("2023-06-29T20:20:56.859Z"),
@@ -230,5 +230,3 @@ const enrichedMovements = [
     sumNumber: undefined,
   },
 ];
-
-module.exports = enrichedMovements;

@@ -1,4 +1,4 @@
-const ageRanges = [
+export const ageRanges = [
   {
     IdFaixaIdade: 1,
     FaixaIdade: "8 a 12 meses",
@@ -117,5 +117,3 @@ const ageRanges = [
     Creep: 1,
   },
 ];
-
-module.exports = ageRanges;

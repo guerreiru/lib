@@ -1,4 +1,4 @@
-const weightGainCurveMock = {
+export const weightGainCurveMock = {
   january: 0.703,
   february: 0.703,
   march: 0.639,
@@ -13,7 +13,7 @@ const weightGainCurveMock = {
   december: 0.703,
 };
 
-const weightGainCurveMockTicket99333 = [
+export const weightGainCurveMockTicket99333 = [
   {
     id: 1853,
     createdAt: "2023-12-07 16:53:41.118",
@@ -61,5 +61,3 @@ const weightGainCurveMockTicket99333 = [
     farmId: 1453,
   },
 ];
-
-module.exports = { weightGainCurveMock, weightGainCurveMockTicket99333 };

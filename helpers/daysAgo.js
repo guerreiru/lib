@@ -5,7 +5,7 @@
  * @param {number} days - O número de dias atrás a ser calculado.
  * @returns {Date} A data correspondente ao número de dias atrás especificado.
  */
-const daysAgo = (days) => {
+export const daysAgo = (days) => {
   if (!days) {
     return new Date();
   }
@@ -14,5 +14,3 @@ const daysAgo = (days) => {
   const subtractedDate = new Date(currDate.setDate(currDate.getDate() - days));
   return subtractedDate;
 };
-
-module.exports = { daysAgo };

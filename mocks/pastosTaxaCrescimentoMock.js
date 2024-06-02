@@ -1,4 +1,4 @@
-const pastosTaxaCrescimentoMock = [
+export const pastosTaxaCrescimentoMock = [
   {
     IdPasto: 181,
     IdRetiro: 31,
@@ -8,4 +8,3 @@ const pastosTaxaCrescimentoMock = [
     OrdemModulo: 1,
   },
 ];
-module.exports = { pastosTaxaCrescimentoMock };

@@ -1,4 +1,4 @@
-const livestocksMock = [
+export const livestocksMock = [
   {
     id: 115007,
     createdAt: "2023-06-01T00:39:03.217Z",
@@ -325,5 +325,3 @@ const livestocksMock = [
     weights: [],
   },
 ];
-
-module.exports = { livestocksMock };

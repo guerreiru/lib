@@ -1,4 +1,4 @@
-const customFlat = (array, depth = 1) => {
+export const customFlat = (array, depth = 1) => {
   const newArray = [];
 
   function flatten(array, currentDepth) {
@@ -14,5 +14,3 @@ const customFlat = (array, depth = 1) => {
   flatten(array, 0);
   return newArray;
 };
-
-module.exports = { customFlat };

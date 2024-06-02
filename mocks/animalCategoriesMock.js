@@ -1,4 +1,4 @@
-const animalCategoriesMock = [
+export const animalCategoriesMock = [
   {
     id: 1,
     createdAt: "2019-03-01T23:15:33.000Z",
@@ -425,5 +425,3 @@ const animalCategoriesMock = [
     desiredNumber: 160,
   },
 ];
-
-module.exports = { animalCategoriesMock };

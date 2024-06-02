@@ -7,7 +7,7 @@
  * @throws {Error} If the input properties are invalid.
  */
 
-const brickPerWall = (wall, brick) => {
+export const brickPerWall = (wall, brick) => {
   if (
     !wall ||
     !brick ||
@@ -52,7 +52,7 @@ const brickPerWall = (wall, brick) => {
  * @throws {Error} If the input properties are invalid.
  */
 
-const totalBricksNeeded = (walls, brick) => {
+export const totalBricksNeeded = (walls, brick) => {
   if (!Array.isArray(walls) || walls.length === 0) {
     throw new Error("The list of walls must be a non-empty array.");
   }
@@ -74,5 +74,3 @@ const totalBricksNeeded = (walls, brick) => {
 
   return walls.reduce((prev, curr) => prev + brickPerWall(curr, brick), 0);
 };
-
-module.exports = { totalBricksNeeded };

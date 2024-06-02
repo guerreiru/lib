@@ -15,5 +15,3 @@ function monthsOfSemester(currentMonth, lang = "pt-BR") {
 
   return { ...semester };
 }
-
-module.exports = { monthsOfSemester };

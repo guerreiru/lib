@@ -1,5 +1,1 @@
-const areaOfCircle = (r) => {
-  return Number(Math.PI * r ** 2).toFixed(2);
-};
-
-module.exports = { areaOfCircle };
+export const areaOfCircle = (r) => Number(Math.PI * r ** 2).toFixed(2);

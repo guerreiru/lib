@@ -5,7 +5,7 @@
  * @param {number} [step=1] O tamanho do passo entre os números na sequência (opcional, padrão é 1).
  * @returns {number[]} Uma matriz contendo a sequência de números dentro do intervalo especificado.
  */
-const range = (index, end, step = 1) => {
+export const range = (index, end, step = 1) => {
   const n1 = end ? index : 1;
   const n2 = end ? end : index;
 
@@ -21,5 +21,3 @@ const range = (index, end, step = 1) => {
 
   return nums;
 };
-
-module.exports = { range };

@@ -1,4 +1,4 @@
-const herdByFarmIdMock = {
+export const herdByFarmIdMock = {
   farmId: 45,
   pastures: [
     {
@@ -6099,5 +6099,3 @@ const herdByFarmIdMock = {
     },
   ],
 };
-
-module.exports = herdByFarmIdMock;

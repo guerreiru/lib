@@ -1,4 +1,4 @@
-const coletasAlturaTaxaCrescimentoMock = [
+export const coletasAlturaTaxaCrescimentoMock = [
   {
     IdColetaAlturaPasto: 116,
     UsuarioCriacao: "gerry.sousa",
@@ -100,5 +100,3 @@ const coletasAlturaTaxaCrescimentoMock = [
     NomeTipoColetaAltura: "Saida",
   },
 ];
-
-module.exports = { coletasAlturaTaxaCrescimentoMock };
