@@ -20,7 +20,7 @@ function countDaysPerMonth(startDate, endDate) {
   return result;
 }
 
-function calculateProjectedWeight(
+export function calculateProjectedWeight(
   lastWeighingDate,
   lastWeight,
   weightGainCurve,
@@ -47,11 +47,9 @@ function calculateProjectedWeight(
 }
 
 // Example usage
-// const lastWeighingDate = "2024-02-15T23:59:59.999Z";
-// const lastWeight = 342;
-// const currentDate = "2024-03-01T23:59:59.999Z";
+// export const lastWeighingDate = "2024-02-15T23:59:59.999Z";
+// export const lastWeight = 342;
+// export const currentDate = "2024-03-01T23:59:59.999Z";
 
-// const projectedWeight = calculateProjectedWeight(lastWeighingDate, lastWeight, weightGainCurve, currentDate);
+// export const projectedWeight = calculateProjectedWeight(lastWeighingDate, lastWeight, weightGainCurve, currentDate);
 // console.log(projectedWeight);
-
-module.exports = { calculateProjectedWeight };

@@ -1,4 +1,4 @@
-const compareObjects = (...objs) => {
+export const compareObjects = (...objs) => {
   const uniqueStrings = new Set(objs.map((obj) => JSON.stringify(obj)));
   const uniqueCount = uniqueStrings.size;
   if (uniqueCount === 1) {
@@ -11,5 +11,3 @@ const compareObjects = (...objs) => {
     });
   }
 };
-
-module.exports = { compareObjects };

@@ -1,4 +1,4 @@
-const dayjs = require("dayjs");
+export const dayjs = require("dayjs");
 
 /**
  * Validates and returns a date range.
@@ -8,7 +8,7 @@ const dayjs = require("dayjs");
  * @returns {Object} - An object containing the validated start and end dates.
  */
 
-const validateDateInterval = (startDate, endDate) => {
+export const validateDateInterval = (startDate, endDate) => {
   let defaultEndDate = new Date();
   let defaultStartDate = new Date();
   defaultStartDate.setDate(defaultEndDate.getDate() - 30);
@@ -27,5 +27,3 @@ const validateDateInterval = (startDate, endDate) => {
 
   return { startDate: defaultStartDate, endDate: defaultEndDate };
 };
-
-module.exports = { validateDateInterval };

@@ -1,4 +1,4 @@
-const groupBy = (array, key) => {
+export const groupBy = (array, key) => {
   return array.reduce((groupedArray, item) => {
     const groupKey = String(item[key]);
 
@@ -8,5 +8,3 @@ const groupBy = (array, key) => {
     return groupedArray;
   }, {});
 };
-
-module.exports = { groupBy };

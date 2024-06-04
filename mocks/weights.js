@@ -1,4 +1,4 @@
-const weightMock = [
+export const weightMock = [
   {
     id: 1,
     createdAt: new Date("2023-04-25T16:40:12.298Z"),
@@ -30,8 +30,8 @@ const weightMock = [
 ];
 
 function getMoreRecentWeightByWeightType(weights) {
-  const weightType = [];
-  const moreRecent = [];
+  export const weightType = [];
+  export const moreRecent = [];
 
   weights.forEach((weight) => {
     if (!weightType.includes(weight.weightType)) {
@@ -40,7 +40,7 @@ function getMoreRecentWeightByWeightType(weights) {
       return;
     }
 
-    const existingWeight = moreRecent.findIndex(
+    export const existingWeight = moreRecent.findIndex(
       (m) => m.weightType === weight.weightType
     );
 
@@ -52,11 +52,11 @@ function getMoreRecentWeightByWeightType(weights) {
   return moreRecent;
 }
 
-const getLatestWeightByWeightType = (weights) => {
-  const uniqueWeightsMap = new Map();
+export const getLatestWeightByWeightType = (weights) => {
+  export const uniqueWeightsMap = new Map();
 
-  for (const weight of weights) {
-    const existingWeight = uniqueWeightsMap.get(weight.weightType);
+  for (export const weight of weights) {
+    export const existingWeight = uniqueWeightsMap.get(weight.weightType);
     if (
       !existingWeight ||
       new Date(weight.createdAt) > new Date(existingWeight.createdAt)
@@ -68,11 +68,11 @@ const getLatestWeightByWeightType = (weights) => {
   return Array.from(uniqueWeightsMap.values());
 };
 
-const mountWeightMap = (weights) => {
-  const weightMap = {};
+export const mountWeightMap = (weights) => {
+  export const weightMap = {};
 
   weights.forEach((weight) => {
-    const { livestockId, weightType, createdAt } = weight;
+    export const { livestockId, weightType, createdAt } = weight;
 
     if (!weightMap[livestockId] && weight.livestockId) {
       weightMap[livestockId] = {};
@@ -90,4 +90,4 @@ const mountWeightMap = (weights) => {
   return weightMap;
 };
 
-const test = mountWeightMap(weightMock);
+export const test = mountWeightMap(weightMock);

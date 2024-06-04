@@ -1,5 +1,5 @@
-const { isValidDate } = require("./isValidDate");
-const { parseISODate } = require("./parseISODate");
+export const { isValidDate } = require("./isValidDate");
+export const { parseISODate } = require("./parseISODate");
 
 /**
  * Calculates the difference between two dates and returns the selected fields.
@@ -9,7 +9,7 @@ const { parseISODate } = require("./parseISODate");
  * @returns {Object} - An object containing the selected fields and their values.
  * @throws {Error} - If startDate or endDate are not valid date objects or strings in ISO 8601 format.
  */
-const dateDiff = (startDate, endDate) => {
+export const dateDiff = (startDate, endDate) => {
   // Convert strings to Date objects if necessary
   if (typeof startDate === "string") {
     startDate = parseISODate(startDate);
@@ -35,5 +35,3 @@ const dateDiff = (startDate, endDate) => {
 
   return result;
 };
-
-module.exports = { dateDiff };

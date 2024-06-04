@@ -1,4 +1,4 @@
-const clientes = [
+export const clientes = [
   {
     IdCliente: 64,
     Nome: "ÉRIKA FABRICIA VIEIRA DIAS",
@@ -5111,7 +5111,7 @@ const clientes = [
     ClienteFinanceiro: "Não",
     UsuarioFinanceiro: null,
 
-    ClienteProteus: "ETECCO EMP TEC DE EST CONS E CONSTR LTDA",
+    ClienteProteus: "ETECCO EMP TEC DE EST CONS E export constR LTDA",
     CodigoClienteProteus: 128,
     AcessaCentralAjuda: "Não",
     LiberadoSuporte: "Não",
@@ -5696,15 +5696,15 @@ const clientes = [
   },
   {
     IdCliente: 466,
-    Nome: "CONSTANTINO ELIAS COLEN JUNIOR",
-    NomeReduzido: "CONSTANTINO ELIAS COLEN JUNIOR",
+    Nome: "export constANTINO ELIAS COLEN JUNIOR",
+    NomeReduzido: "export constANTINO ELIAS COLEN JUNIOR",
     Excluido: "Não",
     DataCriacao: "2021-06-07T16:02:28.000Z",
     UsuarioCriacao: "danielle.santos@prodap.com.br",
     DataAlteracao: "2021-07-21T12:27:56.000Z",
     UsuarioAlteracao: "stpdigital@prodap.com.br",
     ClienteFinanceiro: "Sim",
-    UsuarioFinanceiro: "constantino.elias",
+    UsuarioFinanceiro: "export constantino.elias",
 
     ClienteProteus: null,
     CodigoClienteProteus: null,
@@ -7293,5 +7293,3 @@ const clientes = [
     LiberadoSuporte: "Não",
   },
 ];
-
-module.exports = { clientes };

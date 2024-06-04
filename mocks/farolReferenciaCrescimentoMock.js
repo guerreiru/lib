@@ -1,4 +1,4 @@
-const farolReferenciaCrescimentoMock = {
+export const farolReferenciaCrescimentoMock = {
   IdFarol: 8,
   Nome: "Taxa de Crescimento do Pasto",
   GrupoFarol: "ALTURA_PASTO",
@@ -65,4 +65,3 @@ const farolReferenciaCrescimentoMock = {
     },
   ],
 };
-module.exports = { farolReferenciaCrescimentoMock };

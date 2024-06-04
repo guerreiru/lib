@@ -1,4 +1,4 @@
-const diagonalDifference = (arr) => {
+export const diagonalDifference = (arr) => {
   let leadingDiagonal = 0;
   let secondaryDiagonal = 0;
 
@@ -20,5 +20,3 @@ const diagonalDifference = (arr) => {
 
   return Math.abs(leadingDiagonal - secondaryDiagonal);
 };
-
-module.exports = { diagonalDifference };

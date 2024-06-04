@@ -4,13 +4,9 @@
  * @param {string} separator O caracter que irá reparar as palavras.
  * @returns {string} O valor formatado.
  */
-const normalizeString = (valor, separator = "_") => {
+export const normalizeString = (valor, separator = "_") => {
   return valor
     .replace(/ /g, separator) // Substitui espaços por underline
     .normalize("NFD") // Normaliza caracteres unicode para decomposição
     .replace(/[\u0300-\u036f]/g, ""); // Remove diacríticos
-};
-
-module.exports = {
-  normalizeString,
 };

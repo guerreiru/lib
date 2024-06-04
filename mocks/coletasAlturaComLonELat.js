@@ -1,4 +1,4 @@
-const coletasAlturaComLonELat = [
+export const coletasAlturaComLonELat = [
   {
     IdColetaAlturaPasto: 313148,
     UsuarioCriacao: "newber.sena",
@@ -104,5 +104,3 @@ const coletasAlturaComLonELat = [
     ],
   },
 ];
-
-module.exports = { coletasAlturaComLonELat };

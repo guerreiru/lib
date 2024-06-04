@@ -1,9 +1,9 @@
-const CEMENT_PER_SQUARE_METER = 10;
-const CEMENT_DENSITY_PER_LITER = 1.4;
+export const CEMENT_PER_SQUARE_METER = 10;
+export const CEMENT_DENSITY_PER_LITER = 1.4;
 
-const calcWallArea = (wall) => wall.height * wall.wallLength;
+export const calcWallArea = (wall) => wall.height * wall.wallLength;
 
-const totalCementNeeded = (
+export const totalCementNeeded = (
   walls,
   cement_density_per_liter = CEMENT_DENSITY_PER_LITER
 ) => {
@@ -20,5 +20,3 @@ const totalCementNeeded = (
     litros: QuantityOfCementInLiters,
   };
 };
-
-module.exports = { totalCementNeeded };

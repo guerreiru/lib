@@ -1,4 +1,4 @@
-const weightConversor = (weights) => {
+export const weightConversor = (weights) => {
   const _weights = {};
 
   weights.forEach((weight) => {
@@ -21,5 +21,3 @@ const weightConversor = (weights) => {
   });
   return _weights;
 };
-
-module.exports = { weightConversor };

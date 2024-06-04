@@ -1,4 +1,4 @@
-const herdByFarmIdDataExtractor = (herdData) => {
+export const herdByFarmIdDataExtractor = (herdData) => {
   const livestocks = herdData.pastures
     .map((herdData) => {
       return herdData.livestocks;
@@ -36,5 +36,3 @@ const herdByFarmIdDataExtractor = (herdData) => {
 
   return lotes;
 };
-
-module.exports = { herdByFarmIdDataExtractor };

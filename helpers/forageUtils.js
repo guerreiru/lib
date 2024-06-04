@@ -1,5 +1,5 @@
 // Função para inicializar os dados do pasto com valores padrão
-const inicializarDadosPasto = (coletasAltura) => {
+export const inicializarDadosPasto = (coletasAltura) => {
   const idPasto = coletasAltura[0].IdPasto;
   const idForragem = coletasAltura[0].IdForragem;
   let crescimento = null;
@@ -9,7 +9,7 @@ const inicializarDadosPasto = (coletasAltura) => {
 };
 
 // Função para inicializar os dados de coleta com valores padrão
-const inicializarDadosColeta = () => {
+export const inicializarDadosColeta = () => {
   let ultimaColetaEntradaAfericao = null;
   let ultimaColetaSaida = null;
   let indiceColeta = 0;
@@ -17,7 +17,7 @@ const inicializarDadosColeta = () => {
 };
 
 // Função para verificar se a coleta é de entrada ou aferição
-const seColetaEntradaOuAfericao = (coletasAltura, indiceColeta) => {
+export const seColetaEntradaOuAfericao = (coletasAltura, indiceColeta) => {
   return (
     coletasAltura[indiceColeta].NomeTipoColetaAltura === "Entrada" ||
     coletasAltura[indiceColeta].NomeTipoColetaAltura === "Afericao"
@@ -25,12 +25,12 @@ const seColetaEntradaOuAfericao = (coletasAltura, indiceColeta) => {
 };
 
 // Função para verificar se a coleta é de saída
-const seColetaSaida = (coletasAltura, indiceColeta) => {
+export const seColetaSaida = (coletasAltura, indiceColeta) => {
   return coletasAltura[indiceColeta].NomeTipoColetaAltura === "Saida";
 };
 
 // Função para obter a última coleta de entrada/aferição e saída
-const obterUltimaColetaDeEntradaAfericaoESaida = (coletasAltura) => {
+export const obterUltimaColetaDeEntradaAfericaoESaida = (coletasAltura) => {
   let { indiceColeta, ultimaColetaEntradaAfericao, ultimaColetaSaida } =
     inicializarDadosColeta();
 
@@ -54,12 +54,12 @@ const obterUltimaColetaDeEntradaAfericaoESaida = (coletasAltura) => {
   return { ultimaColetaEntradaAfericao, ultimaColetaSaida };
 };
 
-const calcMedia = (valores) =>
+export const calcMedia = (valores) =>
   valores.reduce((acc, val) => acc + val.Altura, 0) / valores.length;
 
 // Função para obter o crescimento dos pastos
 // para obter o crescimento efetivo os dados são provenientes das coletas de altura
-const obterCrescimentoPastos = (coletasAltura) => {
+export const obterCrescimentoPastos = (coletasAltura) => {
   var { crescimento, diasDescanso, idPasto, idForragem } =
     inicializarDadosPasto(coletasAltura);
   let { ultimaColetaEntradaAfericao, ultimaColetaSaida } =
@@ -96,7 +96,7 @@ const obterCrescimentoPastos = (coletasAltura) => {
 };
 
 // Função para calcular o crescimento com base nas medições de altura
-const obterCrescimento = (
+export const obterCrescimento = (
   crescimento,
   ultimaColetaEntradaAfericao,
   ultimaColetaSaida
@@ -116,7 +116,7 @@ const obterCrescimento = (
 };
 
 // Função para calcular a diferença de dias entre duas datas
-const calculaDiferencaDatasEmDias = (dataRecente, dataAntiga) => {
+export const calculaDiferencaDatasEmDias = (dataRecente, dataAntiga) => {
   let recente = new Date(dataRecente);
   let antiga = new Date(dataAntiga);
   let diferencaTempo = Math.abs(recente.getTime() - antiga.getTime());
@@ -141,7 +141,7 @@ coletasAgrupadasPorIdPasto = (coletas) => {
 };
 
 // Função para ordenar as coletas por data decrescente
-const obterColetasOrdenadas = (coletasAlturaPastos) => {
+export const obterColetasOrdenadas = (coletasAlturaPastos) => {
   return coletasAlturaPastos.sort((a, b) => {
     const dataA = new Date(a.DataColeta);
     const dataB = new Date(b.DataColeta);
@@ -156,18 +156,18 @@ const obterColetasOrdenadas = (coletasAlturaPastos) => {
   });
 };
 
-const calcCrescimento = (alturaEntrada, alturaSaida, dias) => {
+export const calcCrescimento = (alturaEntrada, alturaSaida, dias) => {
   return (alturaEntrada - alturaSaida) / dias;
 };
 
 // Função para obter o relacionamento entre pastos e módulos
-const obterRelacionamentoPastosModulos = (pastos) =>
+export const obterRelacionamentoPastosModulos = (pastos) =>
   pastos.reduce((relacionamento, { IdPasto, IdModulo }) => {
     relacionamento[IdPasto] = Boolean(IdModulo);
     return relacionamento;
   }, {});
 
-const calculaCrescimentoEsperado = (
+export const calculaCrescimentoEsperado = (
   crescimentoDoPasto,
   dadoPastosCicloForragem
 ) => {
@@ -178,7 +178,7 @@ const calculaCrescimentoEsperado = (
 };
 
 // Função para obter os dados de altura de entrada e saída do ciclo de forragem
-const obterAlturaEntradaSaidaCicloForragem = (
+export const obterAlturaEntradaSaidaCicloForragem = (
   cicloForragem,
   coletaAlturaPasto,
   idForragem
@@ -244,7 +244,7 @@ const obterAlturaEntradaSaidaCicloForragem = (
 };
 
 // Função para obter os dados dos pastos com base nas coletas de altura e ciclos de forragem
-const obterDadosPastosCicloForragem = (
+export const obterDadosPastosCicloForragem = (
   pastos,
   coletasAlturaPastos,
   ciclosForragens
@@ -282,7 +282,7 @@ const obterDadosPastosCicloForragem = (
 };
 
 // Função para obter o crescimento do pasto com base nos dados das coletas
-const obterCrescimentoPasto = (
+export const obterCrescimentoPasto = (
   crescimentoPastosPorColeta,
   dadoPastosCicloForragem
 ) => {
@@ -292,7 +292,7 @@ const obterCrescimentoPasto = (
 };
 
 // Função para verificar se ocorre crescimento no pasto com módulo
-const seOcorreCrescimentoPasto = (
+export const seOcorreCrescimentoPasto = (
   crescimentoDoPasto,
   pastoPossuiOuNaoModulo
 ) => {
@@ -305,12 +305,12 @@ const seOcorreCrescimentoPasto = (
 };
 
 // Função para obter o crescimento de referência com base no crescimento esperado e uma referência
-const obterCrescimentoReferencia = (crescimentoEsperado, referencia) => {
+export const obterCrescimentoReferencia = (crescimentoEsperado, referencia) => {
   return (crescimentoEsperado * referencia.Valor.ValorPercentual) / 100;
 };
 
 // Calcula a cor de referência com base no crescimento esperado e efetivo.
-const calculaCorReferencia = (
+export const calculaCorReferencia = (
   referenciasFarol,
   crescimentoEsperado,
   crescimentoEfetivo,
@@ -340,7 +340,7 @@ const calculaCorReferencia = (
 };
 
 // Calcular o "farol de crescimento" para forragens.
-const obterFarolCrescimentoForragem = (
+export const obterFarolCrescimentoForragem = (
   farol,
   pastos,
   coletasAlturaPastos,
@@ -412,5 +412,3 @@ const obterFarolCrescimentoForragem = (
 
   return farol;
 };
-
-module.exports = { obterFarolCrescimentoForragem };

@@ -1,4 +1,4 @@
-const { dateDiff } = require("./dateDiff");
+export const { dateDiff } = require("./dateDiff");
 
 /**
  * Classe para manipulação de datas.
@@ -99,6 +99,4 @@ class DateManipulator {
   };
 }
 
-module.exports = {
-  DateManipulator,
-};
+export { DateManipulator };

@@ -1,4 +1,4 @@
-const pointInsidePolygon = (polygonCoors, point) => {
+export const pointInsidePolygon = (polygonCoors, point) => {
   const x = point.lat;
   const y = point.lon;
 
@@ -24,5 +24,3 @@ const pointInsidePolygon = (polygonCoors, point) => {
 
   return inside;
 };
-
-module.exports = { pointInsidePolygon };

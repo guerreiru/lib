@@ -1,4 +1,4 @@
-const respostaFarol = {
+export const respostaFarol = {
   IdFarol: 8,
   Nome: "Taxa de Crescimento do Pasto",
   GrupoFarol: "ALTURA_PASTO",

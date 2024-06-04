@@ -1,4 +1,4 @@
-const weightsMock = [
+export const weightsMock = [
   {
     id: 1,
     createdAt: new Date("2023-04-19T17:32:00.000Z"),
@@ -26,5 +26,3 @@ const weightsMock = [
     synchronizationId: "",
   },
 ];
-
-module.exports = weightsMock;
