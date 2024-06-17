@@ -1,4 +1,4 @@
-export const dayjs = require("dayjs");
+import dayjs from "dayjs";
 
 /**
  * Validates and returns a date range.

@@ -1,4 +1,4 @@
-export const { hasValue } = require("./hasValue");
+import { hasValue } from "./hasValue";
 
 export const ageRangeSeeds = (ageRanges) => {
   if (ageRanges.length && ageRanges.length > 0) {

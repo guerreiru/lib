@@ -1,4 +1,4 @@
-export const { isValidDate } = require("./isValidDate");
+import { isValidDate } from "./isValidDate.js";
 
 /**
  * Converts a string in ISO 8601 format to a Date object.

@@ -1,5 +1,5 @@
-export const { isValidDate } = require("./isValidDate");
-export const { parseISODate } = require("./parseISODate");
+import { isValidDate } from "./isValidDate.js";
+import { parseISODate } from "./parseISODate.js";
 
 /**
  * Calculates the difference between two dates and returns the selected fields.
