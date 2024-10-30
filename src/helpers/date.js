@@ -1,4 +1,4 @@
-export const { dateDiff } = require("./dateDiff");
+import { dateDiff } from "./dateDiff.js";
 
 /**
  * Classe para manipulação de datas.

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./helpers"
+    "dev": "nodemon ./src/helpers"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "dayjs": "^1.11.9",
+    "dayjs": "^1.11.12",
     "nodemon": "^2.0.21"
   }
 }

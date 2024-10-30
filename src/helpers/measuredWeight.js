@@ -20,12 +20,12 @@ function countDaysPerMonth(startDate, endDate) {
   return result;
 }
 
-export function calculateProjectedWeight(
+export function calculateMeasuredWeight({
   lastWeighingDate,
   lastWeight,
   weightGainCurve,
-  currentDate
-) {
+  currentDate,
+}) {
   const daysPerMonth = countDaysPerMonth(lastWeighingDate, currentDate);
 
   lastWeighingDate.setHours(0);
@@ -43,7 +43,7 @@ export function calculateProjectedWeight(
     projectedWeight += dailyGain * daysPerMonth[month];
   }
 
-  return projectedWeight;
+  return Number(projectedWeight.toFixed(2));
 }
 
 // Example usage
@@ -51,5 +51,5 @@ export function calculateProjectedWeight(
 // export const lastWeight = 342;
 // export const currentDate = "2024-03-01T23:59:59.999Z";
 
-// export const projectedWeight = calculateProjectedWeight(lastWeighingDate, lastWeight, weightGainCurve, currentDate);
+// export const projectedWeight = calculateMeasuredWeight(lastWeighingDate, lastWeight, weightGainCurve, currentDate);
 // console.log(projectedWeight);
