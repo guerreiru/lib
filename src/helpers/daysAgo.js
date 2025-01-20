@@ -7,7 +7,7 @@
  */
 export const daysAgo = (days) => {
   if (!days) {
-    return new Date();
+    return daysAgo(1);
   }
 
   const currDate = new Date();

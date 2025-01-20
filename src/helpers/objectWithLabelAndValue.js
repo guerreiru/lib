@@ -1,4 +1,4 @@
-export const { normalizeString } = require("./normalizeString");
+import { normalizeString } from "./normalizeString";
 
 export const objectWithLabelAndValue = (values) =>
   values.map((valor) => ({

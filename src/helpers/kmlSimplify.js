@@ -1,5 +1,4 @@
-export const simplify = require("@turf/simplify");
-export const coords = require("./IdPasto=56083.json");
+import simplify from "@turf/simplify";
 
 export const makeGeoJson = {
   type: "FeatureCollection",
