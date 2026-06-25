@@ -6,11 +6,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/helpers"
+    "dev": "tsx watch src/index.ts"
   },
   "nodemonConfig": {
     "watch": [
-      "helpers"
+      "src"
     ],
     "ignore": [
       "logs",
@@ -22,13 +22,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/benchmark": "^2.1.5",
     "@types/node": "^16.11.10",
-    "ts-node": "10.7.0",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.4.5"
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
   },
   "dependencies": {
-    "dayjs": "^1.11.12",
+    "benchmark": "^2.1.4",
+    "dayjs": "^1.11.9",
+    "md5": "^2.3.0",
     "nodemon": "^2.0.21"
   }
 }
